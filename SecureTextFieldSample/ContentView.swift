@@ -9,8 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var password: String = ""
+    
     var body: some View {
-        Text("Hello, World!")
+        
+        Form {
+            Section(header: Text("인증")) {
+                SecureField("인증번호를 입력하세요.", text: $password)
+                Text("너가 입력한 인증번호는 \(password)")
+            }
+        }
+        
+        
     }
 }
 
